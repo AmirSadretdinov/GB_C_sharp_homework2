@@ -4,16 +4,23 @@
 // 7 -> да
 // 1 -> нет
 
+bool proverkaDate(int arg){
+    if ( arg == 6 || arg == 7){
+    return true;
+    }
+    else{
+    return false;
+    }
+}
+
 Console.WriteLine("Введите порядковый номер дня недели");
-int number = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Вы ввели: " + number);
-if ( number == 6 || number == 7){
-    System.Console.WriteLine("Этот день являеся выходным");
+int input = Convert.ToInt32(Console.ReadLine());
+bool number = proverkaDate(input);
+if (number == true){
+    System.Console.WriteLine("да");
 }
-if (number > 0 && number < 6){
-    System.Console.WriteLine("Этот день не являеся выходным");
+else {
+    System.Console.WriteLine("нет");
 }
-else if (number == 0 || number > 8 || number < 0) {
-    System.Console.WriteLine("Нет дня недели с таким номером");
-}
+
 
