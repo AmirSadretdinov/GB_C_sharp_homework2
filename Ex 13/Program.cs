@@ -3,21 +3,29 @@
 // 645 -> 5
 // 78 -> третьей цифры нет
 // 32679 -> 6
-
-Console.WriteLine("Введите число");
-string number = Console.ReadLine();
-Console.WriteLine("Ваше число: " + number);
-int num = Convert.ToInt32(number); // Преобразование строки в число для мат операций
-int a = number.Length;
+string searchThirdNum(string arg){
+  int num = Convert.ToInt32(arg); 
+  int a = arg.Length;
 if (a > 3 || a == 3){
     while (a > 3)
     {
       num = num / 10;
       a--;  
     }  
-    int thirdNum = num % 10;
-    Console.WriteLine("Третья цифра: " + thirdNum);
+    int search = num % 10;
+    string thirdNum = Convert.ToString(search);
+    return thirdNum;
 }
-else if (a < 3){
-    Console.WriteLine("Третьей цифры нет");
+return null;
 }
+Console.WriteLine("Введите число");
+string input = Console.ReadLine();
+System.Console.WriteLine("Ваше число: " + input);
+string number = searchThirdNum(input);
+if (number == null){
+  System.Console.WriteLine("Третьей цифры нет");
+}
+else {
+  System.Console.WriteLine("Третья цифра: " + number);
+}
+
